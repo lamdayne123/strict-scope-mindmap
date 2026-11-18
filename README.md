@@ -1,25 +1,22 @@
 # Strict Scope Mindmap
 
-A workflow skill for coding agents that helps keep a task focused: understand the request, map what is in and out of scope, make the needed changes, and verify them before wrapping up.
+A workflow skill for coding agents that helps keep implementation focused: clarify the request, identify the files involved, avoid unrelated changes, and verify the result.
 
-It is a set of instructions and reference files, not a standalone app. It does not sandbox an agent or guarantee that its changes are correct.
+Strict Scope Mindmap is a collection of instructions and reference files—not a standalone application. It guides an agent; it does not sandbox file access or guarantee bug-free code.
 
 ## What it does
 
-- Separates a request into explicit requirements, necessary related work, and out-of-scope changes.
-- Gets the agent to make a short execution plan before deep code searches or edits.
-- Encourages targeted inspection instead of broad, unrelated repository scans.
-- Asks the agent to pause and get approval when a required change crosses the agreed boundary.
-- Provides testing guidance and a template for recording verification.
-- Includes optional tool catalogs and example configuration for several coding environments.
+- Separates a task into direct requirements, necessary related work, and out-of-scope work.
+- Has the agent outline a target scope before deep searches or edits.
+- Encourages focused code inspection instead of broad repository scans.
+- Requires the agent to ask before crossing a stated boundary to inspect or change another file.
+- Provides testing guidance, tool catalogs, and a test-log template.
 
 ## Install
 
-You need Git to clone the repository. The installer copies the skill and its supporting files into a project directory; it does not install third-party tools listed in the catalogs.
+You need Git to clone the repository. The installers copy the packaged Skill into a project directory. They do not install the optional tools listed in the catalogs.
 
 ### Windows Command Prompt (CMD)
-
-Clone the repository, then run the PowerShell installer from CMD:
 
 ```bat
 git clone https://github.com/lamdayne123/strict-scope-mindmap.git
@@ -27,23 +24,21 @@ cd strict-scope-mindmap
 powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -TargetRoot "C:\path\to\your\project"
 ```
 
-To install into the current directory instead, leave off `-TargetRoot`:
+Replace `C:\path\to\your\project` with the project where your coding agent will work. To install into the current directory instead, omit `-TargetRoot`:
 
 ```bat
 powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
-Replace `C:\path\to\your\project` with the project where your coding agent will work. The install script can be run again to refresh the installed files.
-
 ### PowerShell
 
-From the repository directory:
+From the cloned repository:
 
 ```powershell
 .\install.ps1 -TargetRoot "C:\path\to\your\project"
 ```
 
-Or install into the current directory:
+Or use the current directory:
 
 ```powershell
 .\install.ps1
@@ -57,19 +52,13 @@ cd strict-scope-mindmap
 ./install.sh /path/to/your/project
 ```
 
-Omit the project path to install into the current directory:
+Omit the project path to use the current directory:
 
 ```bash
 ./install.sh
 ```
 
-## About npm
-
-This repository is not an npm package and has no `package.json`. You do not need `npm install` or `npm run` to install the skill. Use the installer above. The example MCP configuration uses `npx` to launch optional MCP servers; those are separate tools and are only needed if you choose to configure them.
-
-## Where the files are installed
-
-The installers copy the skill into these directories under your target project:
+The installers copy the Skill to these five locations under the target root:
 
 ```text
 .agents/skills/strict-scope-mindmap
@@ -79,51 +68,51 @@ The installers copy the skill into these directories under your target project:
 .agent/skills/strict-scope-mindmap
 ```
 
-The installers create all five locations. Your coding agent will use the one matching its conventions, if it supports that skill directory.
+They create all five locations. Your agent needs to support its corresponding skill directory to use the installed files.
+
+## npm
+
+This repository is not published as an npm package and does not contain a `package.json`. There is no supported `npm install` or `npm run` command for installing this Skill. Use the scripts above instead. Some example MCP configurations use `npx` to launch separately configured tools; that is unrelated to installing Strict Scope Mindmap.
 
 ## Use it
 
-After installation, ask your coding agent to follow `strict-scope-mindmap` while working on a task. For example:
+After installation, ask your coding agent to follow `strict-scope-mindmap` for a task. For example:
 
-> Add cursor pagination to `GET /api/v1/transactions`. Keep the change limited to the endpoint and the direct files needed to complete it. Before editing, outline the requirements, target files, boundaries, and verification plan. Ask me before touching anything outside that scope.
+> Add cursor pagination to `GET /api/v1/transactions`. Before editing, identify the target files and what is out of scope. Ask me before inspecting or changing files outside that scope. Implement the necessary changes and report how you verified them.
 
-The skill guides the agent to identify the goal and project context, outline its target scope, inspect relevant code, implement the requested change, and report what it checked. Its testing guidance is a template for the agent to apply to the project; the actual tests depend on the repository and available tools.
+The agent should first identify the goal and project context, outline its target scope, inspect relevant code, and then implement and test the requested change. The Skill recommends available tools based on the project's stack; it does not automatically install or run them.
 
-## Repository contents
+## Testing and verification
 
-| Path | Purpose |
-| --- | --- |
-| `skill/strict-scope-mindmap/` | Packaged skill and its reference guides; this is what the installers copy. |
-| `SKILL.md` and `references/` | Root-level copies of the skill instructions and guides. |
-| `plugins/` | Manifests and readmes describing optional tool groups. These do not install the tools. |
-| `configs/` | Example agent and MCP configuration files. Adapt them to your setup before use. |
-| `install.sh`, `install.ps1` | Install the packaged files on Unix-like systems and Windows. |
-| `scripts/check-dependencies.sh` | Lists selected optional commands found in a Unix-like shell. It does not install anything. |
-| `scripts/verify-install.sh` | Checks that expected package files are present. Run it from Bash, Git Bash, or WSL. |
-| `manifest.json` | Package metadata, supported agent names, plugin references, and script paths. |
+For code changes, the Skill directs the agent to select a suitable test environment and focus checks on the target feature. Its guidance covers functional behavior, boundary and malformed inputs, concurrency, and relevant lifecycle or scale risks. It also provides a template for recording verification in `TEST_VERIFICATION_LOG.md`.
 
-## Optional checks
+The packaged Skill allows testing to stop after Pass 2 only when no scenarios fail and the future-risk review is clean; if issues remain, the agent should fix them and continue testing. The separate root-level `SKILL.md` specifies at least three passes. The installers use the packaged version in `skill/strict-scope-mindmap/`.
 
-On Windows, run the package-file check from Git Bash or WSL. From the repository root:
+## Repository files
 
-```bash
-./scripts/verify-install.sh
-```
+- `skill/strict-scope-mindmap/` — packaged Skill and references copied by the installers.
+- `SKILL.md` and `references/` — root-level copies of the Skill instructions and guides.
+- `plugins/` — tool catalogs and manifests; these do not install the listed tools.
+- `configs/` — example agent and MCP configuration files.
+- `install.sh`, `install.ps1` — installation scripts for Bash and PowerShell.
+- `scripts/check-dependencies.sh` — reports selected optional commands available in a Unix-like shell.
+- `scripts/verify-install.sh` — checks for expected package files; run it from Bash, Git Bash, or WSL.
+- `manifest.json` — package metadata and paths to the Skill, plugins, and scripts.
 
-To check which optional tools are available in that shell:
+Optional checks, run from the cloned repository in Bash, Git Bash, or WSL:
 
 ```bash
 ./scripts/check-dependencies.sh
+./scripts/verify-install.sh
 ```
 
-These scripts do not test an installed coding agent or install missing dependencies.
+These scripts do not install missing tools or confirm that an agent has loaded the Skill.
 
 ## Notes
 
-- The tool lists are suggestions, not bundled integrations. Install and configure any tools separately.
-- The example files in `configs/` are starting points, not ready-made configuration for every agent.
-- The skill relies on the coding agent following its instructions. It is not a technical access-control boundary.
-- The packaged copy under `skill/strict-scope-mindmap/` is the version installed by the scripts.
+- Tool catalogs are suggestions. Install and configure any tools separately.
+- Example configuration files may need changes for your environment.
+- The Skill relies on the coding agent following its instructions; it is not a technical access-control boundary.
 
 ## License
 
