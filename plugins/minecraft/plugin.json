@@ -1,0 +1,45 @@
+{
+  "name": "strict-scope-minecraft",
+  "category": "minecraft",
+  "description": "Minecraft server plugin and mod development, Folia regionized concurrency testing, and tick-budget profiling.",
+  "tools": [
+    {
+      "name": "Paper / Purpur API",
+      "role": "High-performance Minecraft server plugin APIs (Event, Command, Adventure, PDC)"
+    },
+    {
+      "name": "Folia API",
+      "role": "Regionized multithreaded scheduling and thread-safety verification"
+    },
+    {
+      "name": "Sponge API",
+      "role": "Cross-platform plugin architecture"
+    },
+    {
+      "name": "Fabric Loom / NeoForge",
+      "role": "Minecraft client/server mod toolchains and Mixin verification"
+    },
+    {
+      "name": "Geyser tooling / Bedrock tooling",
+      "role": "Java-to-Bedrock protocol translation compatibility"
+    },
+    {
+      "name": "Gradle / Maven + JUnit 5 + MockBukkit",
+      "role": "Automated plugin lifecycle, command, and event listener testing"
+    },
+    {
+      "name": "JMH / async-profiler / Spark / VisualVM",
+      "role": "Tick duration (<50ms budget), GC pressure, and memory leak profiling"
+    },
+    {
+      "name": "jdtls",
+      "role": "Java Language Server diagnostics and type checking"
+    }
+  ],
+  "binaries_to_check": [
+    "java",
+    "javac",
+    "gradle",
+    "mvn"
+  ]
+}

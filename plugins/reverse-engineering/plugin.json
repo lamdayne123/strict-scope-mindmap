@@ -1,0 +1,57 @@
+{
+  "name": "strict-scope-reverse-engineering",
+  "category": "reverse-engineering",
+  "description": "Evidence-backed binary, bytecode, APK, .NET assembly, and network protocol inspection tools.",
+  "tools": [
+    {
+      "name": "REA (Reverse Engineer Anything)",
+      "role": "Unified MCP/CLI orchestration for binaries, JS/Electron, APKs, and captures"
+    },
+    {
+      "name": "Ghidra / IDA / Binary Ninja / Rizin / radare2",
+      "role": "Native disassembly, decompilation, and CFG analysis"
+    },
+    {
+      "name": "CFR / Vineflower / Bytecode Viewer / javap",
+      "role": "JVM bytecode decompilation and class structure inspection"
+    },
+    {
+      "name": "JADX / apktool",
+      "role": "Android APK/DEX decompilation and resource decoding"
+    },
+    {
+      "name": ".NET ILSpy / dnSpyEx / dotPeek / monodis",
+      "role": ".NET managed assembly CIL and metadata inspection"
+    },
+    {
+      "name": "Frida",
+      "role": "Authorized dynamic instrumentation and runtime tracing"
+    },
+    {
+      "name": "Wireshark / tshark / mitmproxy / tcpdump",
+      "role": "Packet capture and HTTP(S) protocol analysis"
+    },
+    {
+      "name": "Binwalk / Detect It Easy",
+      "role": "Firmware extraction and binary packing/signature identification"
+    },
+    {
+      "name": "GDB / LLDB / strace / lsof",
+      "role": "Native crash triage and syscall/process inspection"
+    }
+  ],
+  "binaries_to_check": [
+    "rea",
+    "rizin",
+    "radare2",
+    "jadx",
+    "apktool",
+    "frida",
+    "tshark",
+    "binwalk",
+    "gdb",
+    "lldb",
+    "strace",
+    "javap"
+  ]
+}

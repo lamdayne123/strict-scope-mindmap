@@ -1,0 +1,23 @@
+{
+  "defaultSkill": "strict-scope-mindmap",
+  "enforcedPolicies": {
+    "twoPassPromptReading": true,
+    "requireExecutionMindMap": true,
+    "failClosedBoundaryGate": true,
+    "adaptiveTesting": {
+      "enabled": true,
+      "minPassesWhenCleanAndFutureProof": 2,
+      "continuePassesOnAnyFutureRisk": true,
+      "requireScenarioDiversity": "20-100+ cases",
+      "visualLogFile": "TEST_VERIFICATION_LOG.md"
+    },
+    "mandatoryClosingPrompt": "Bạn có muốn tôi kiểm luôn các file còn lại không?"
+  },
+  "agentInstallPaths": {
+    "claude-code": ".claude/skills/strict-scope-mindmap",
+    "codex": ".codex/skills/strict-scope-mindmap",
+    "cursor": ".cursor/skills/strict-scope-mindmap",
+    "antigravity": ".agent/skills/strict-scope-mindmap",
+    "universal": ".agents/skills/strict-scope-mindmap"
+  }
+}

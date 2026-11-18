@@ -1,0 +1,55 @@
+{
+  "name": "strict-scope-browser-automation",
+  "category": "browser-automation",
+  "description": "Real-browser rendering, computed theme/layout verification, accessibility contrast auditing, and visual regression tools.",
+  "tools": [
+    {
+      "name": "Playwright",
+      "role": "Headless/headed browser automation and computed style inspection"
+    },
+    {
+      "name": "Puppeteer",
+      "role": "Chromium automation and screenshot/PDF capture"
+    },
+    {
+      "name": "Chrome DevTools Protocol (CDP)",
+      "role": "DOM, console error, network waterfall, and layout shift inspection"
+    },
+    {
+      "name": "Cypress / WebdriverIO / Selenium",
+      "role": "Interactive UI and cross-browser E2E testing"
+    },
+    {
+      "name": "Storybook",
+      "role": "Isolated component state and theme verification"
+    },
+    {
+      "name": "Chromatic / Percy / Applitools",
+      "role": "Visual regression and pixel/DOM diffing"
+    },
+    {
+      "name": "axe-core / Pa11y",
+      "role": "Automated WCAG accessibility and contrast ratio verification"
+    },
+    {
+      "name": "Lighthouse / WebPageTest",
+      "role": "Core Web Vitals, rendering performance, and quality audits"
+    },
+    {
+      "name": "Figma MCP / Penpot API",
+      "role": "Design token and layout specification inspection"
+    },
+    {
+      "name": "Stylelint / Tailwind CSS tooling / ESLint / Prettier",
+      "role": "CSS and frontend asset validation"
+    }
+  ],
+  "binaries_to_check": [
+    "playwright",
+    "cypress",
+    "pa11y",
+    "lighthouse",
+    "eslint",
+    "stylelint"
+  ]
+}

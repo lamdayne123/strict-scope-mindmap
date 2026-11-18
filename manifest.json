@@ -1,0 +1,39 @@
+{
+  "name": "strict-scope-mindmap",
+  "version": "2.0.0",
+  "description": "Two-pass prompt triage, execution mind-mapping, holistic owning-boundary completion, adaptive future-proof stress testing with visual logs, and filtered multi-domain tool plugins.",
+  "license": "MIT",
+  "skill_path": "skill/strict-scope-mindmap/SKILL.md",
+  "references_dir": "skill/strict-scope-mindmap/references",
+  "supported_agents": [
+    "claude-code",
+    "codex",
+    "antigravity",
+    "cursor",
+    "gemini-cli",
+    "cline",
+    "roo-code",
+    "openhands",
+    "aider",
+    "continue"
+  ],
+  "plugins": [
+    "plugins/code-analysis/plugin.json",
+    "plugins/testing/plugin.json",
+    "plugins/browser-automation/plugin.json",
+    "plugins/database/plugin.json",
+    "plugins/security/plugin.json",
+    "plugins/reverse-engineering/plugin.json",
+    "plugins/minecraft/plugin.json"
+  ],
+  "configs": {
+    "mcp": "configs/mcp.example.json",
+    "agents": "configs/agents.example.json"
+  },
+  "scripts": {
+    "install_sh": "install.sh",
+    "install_ps1": "install.ps1",
+    "check_dependencies": "scripts/check-dependencies.sh",
+    "verify_install": "scripts/verify-install.sh"
+  }
+}

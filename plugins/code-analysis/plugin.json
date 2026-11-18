@@ -1,0 +1,66 @@
+{
+  "name": "strict-scope-code-analysis",
+  "category": "code-analysis",
+  "description": "Precision AST, LSP, symbol, and static analysis tools for reading only Target Scope without repo-wide noise.",
+  "tools": [
+    {
+      "name": "LSP (typescript-language-server / Pyright / gopls / rust-analyzer / jdtls / clangd)",
+      "role": "Symbol definitions, hover types, references, and diagnostics"
+    },
+    {
+      "name": "Tree-sitter",
+      "role": "Multi-language incremental AST parsing"
+    },
+    {
+      "name": "ast-grep",
+      "role": "Structural AST pattern search and targeted rewrite"
+    },
+    {
+      "name": "ripgrep (rg)",
+      "role": "Fast path-scoped regex search"
+    },
+    {
+      "name": "SCIP / ctags",
+      "role": "Symbol indexing and cross-reference lookup"
+    },
+    {
+      "name": "Semgrep",
+      "role": "Rule-based AST bug and anti-pattern analysis"
+    },
+    {
+      "name": "CodeQL",
+      "role": "Semantic code query and dataflow analysis"
+    },
+    {
+      "name": "SonarQube",
+      "role": "Code smells, complexity, and maintainability gates"
+    },
+    {
+      "name": "Understand",
+      "role": "Dependency and architecture graph inspection"
+    },
+    {
+      "name": "Sourcegraph / Zoekt / OpenGrok",
+      "role": "Multi-repository indexed code search"
+    },
+    {
+      "name": "Gitingest",
+      "role": "Targeted repository digest generation"
+    },
+    {
+      "name": "Git CLI / GitHub MCP / gh / glab",
+      "role": "Diff verification and scope containment audit"
+    }
+  ],
+  "binaries_to_check": [
+    "rg",
+    "ast-grep",
+    "semgrep",
+    "git",
+    "gh",
+    "pyright",
+    "rust-analyzer",
+    "gopls",
+    "clangd"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "name": "strict-scope-security",
+  "category": "security",
+  "description": "Static security analysis, secret detection, dependency auditing, IaC policy checks, and smart-contract verification.",
+  "tools": [
+    {
+      "name": "Semgrep / CodeQL",
+      "role": "Taint tracking and vulnerability pattern detection"
+    },
+    {
+      "name": "Gitleaks / TruffleHog",
+      "role": "Pre-commit and diff secret/credential leak scanning"
+    },
+    {
+      "name": "Snyk / OSV-Scanner / OWASP Dependency-Check",
+      "role": "Dependency CVE and supply-chain vulnerability auditing"
+    },
+    {
+      "name": "Trivy / Grype / Syft",
+      "role": "Container image, filesystem, and SBOM security scanning"
+    },
+    {
+      "name": "Checkov / KICS",
+      "role": "Terraform, Kubernetes, and Dockerfile IaC security checks"
+    },
+    {
+      "name": "Bandit / Brakeman",
+      "role": "Python and Ruby security static analyzers"
+    },
+    {
+      "name": "OWASP ZAP / Nuclei",
+      "role": "Authorized dynamic web and API vulnerability probing"
+    },
+    {
+      "name": "Open Policy Agent (OPA) / Conftest",
+      "role": "Policy-as-code enforcement on configs and manifests"
+    },
+    {
+      "name": "Slither / Mythril / Solhint",
+      "role": "Smart contract reentrancy and overflow static analysis"
+    },
+    {
+      "name": "Sigstore / Cosign",
+      "role": "Artifact signing and provenance verification"
+    }
+  ],
+  "binaries_to_check": [
+    "semgrep",
+    "gitleaks",
+    "trivy",
+    "osv-scanner",
+    "bandit",
+    "opa",
+    "conftest",
+    "slither"
+  ]
+}

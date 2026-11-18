@@ -1,0 +1,83 @@
+{
+  "name": "strict-scope-testing",
+  "category": "testing",
+  "description": "High-rigor unit, integration, property-based fuzzing, contract, and load-testing harnesses for the Adaptive Verification Loop.",
+  "tools": [
+    {
+      "name": "Vitest / Jest",
+      "role": "JavaScript and TypeScript parameterized test runner"
+    },
+    {
+      "name": "Testing Library",
+      "role": "User-centric UI component behavior testing"
+    },
+    {
+      "name": "Playwright Test",
+      "role": "Cross-browser end-to-end and API test runner"
+    },
+    {
+      "name": "pytest",
+      "role": "Python parameterized and fixture-driven testing"
+    },
+    {
+      "name": "Go test",
+      "role": "Go table-driven testing, race detector (-race), and native fuzzing (-fuzz)"
+    },
+    {
+      "name": "cargo test",
+      "role": "Rust unit, integration, and doc testing"
+    },
+    {
+      "name": "JUnit / TestNG + Maven Surefire / Gradle Test",
+      "role": "JVM unit and integration test suites"
+    },
+    {
+      "name": "PHPUnit / Pest",
+      "role": "PHP automated test suites"
+    },
+    {
+      "name": "GoogleTest / Catch2",
+      "role": "C and C++ unit and boundary test frameworks"
+    },
+    {
+      "name": "Schemathesis",
+      "role": "Property-based OpenAPI/GraphQL schema fuzzing"
+    },
+    {
+      "name": "Pact",
+      "role": "Consumer-driven contract testing"
+    },
+    {
+      "name": "WireMock / MockServer",
+      "role": "Deterministic HTTP/API dependency simulation"
+    },
+    {
+      "name": "Newman / Postman CLI / Bruno",
+      "role": "Automated API collection verification"
+    },
+    {
+      "name": "k6 / Locust / Gatling / autocannon",
+      "role": "Concurrency, throughput, and tail-latency stress testing"
+    },
+    {
+      "name": "Hyperfine / Criterion / JMH / pytest-benchmark",
+      "role": "Microbenchmarking and regression timing"
+    },
+    {
+      "name": "Memray / Scalene / Valgrind / Heaptrack / perf",
+      "role": "Long-term memory leak and CPU profiling"
+    }
+  ],
+  "binaries_to_check": [
+    "pytest",
+    "vitest",
+    "jest",
+    "go",
+    "cargo",
+    "mvn",
+    "gradle",
+    "k6",
+    "hyperfine",
+    "valgrind"
+  ]
+}

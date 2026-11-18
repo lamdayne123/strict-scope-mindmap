@@ -1,0 +1,64 @@
+{
+  "name": "strict-scope-database",
+  "category": "database",
+  "description": "Database clients, MCP connectors, ORM migration verifiers, and schema validators for data integrity and scale.",
+  "tools": [
+    {
+      "name": "PostgreSQL client (psql) / PostgreSQL MCP",
+      "role": "Query execution, EXPLAIN ANALYZE plans, and constraint checks"
+    },
+    {
+      "name": "Neon / Supabase",
+      "role": "Serverless Postgres branching, Auth, and Edge Function sandboxes"
+    },
+    {
+      "name": "MySQL / MariaDB client",
+      "role": "Relational SQL verification"
+    },
+    {
+      "name": "SQLite CLI (sqlite3)",
+      "role": "Fast local relational snapshot and migration testing"
+    },
+    {
+      "name": "MongoDB driver / MCP",
+      "role": "Document schema and aggregation pipeline verification"
+    },
+    {
+      "name": "Redis CLI (redis-cli) / client",
+      "role": "Cache TTL, eviction, and atomic key-value testing"
+    },
+    {
+      "name": "Prisma / Drizzle / TypeORM / SQLAlchemy",
+      "role": "Type-safe ORM schema and query building"
+    },
+    {
+      "name": "Alembic / Flyway / Liquibase",
+      "role": "Forward and rollback schema migration verification"
+    },
+    {
+      "name": "dbt / Great Expectations / Pandera",
+      "role": "Data transformation and data quality assertions"
+    },
+    {
+      "name": "DuckDB",
+      "role": "Analytical SQL and Parquet/CSV verification"
+    },
+    {
+      "name": "Meilisearch / Typesense / Elasticsearch / pgvector / FAISS",
+      "role": "Full-text and vector search indexing"
+    },
+    {
+      "name": "Zod / Valibot / Pydantic / JSON Schema / Ajv",
+      "role": "Strict boundary payload validation"
+    }
+  ],
+  "binaries_to_check": [
+    "psql",
+    "sqlite3",
+    "mysql",
+    "redis-cli",
+    "duckdb",
+    "prisma",
+    "alembic"
+  ]
+}
